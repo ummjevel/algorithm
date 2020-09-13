@@ -23,5 +23,7 @@ for i in range(n):
         leng = len(p[i])
         temp = i
 
-for i in p[i]:
+for i in p[temp]:
     print(a[i], end=" ")
+print(p)
+# 경로 추적할 때 다잌스트라 하듯이 해도 될듯

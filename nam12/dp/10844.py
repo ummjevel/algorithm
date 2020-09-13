@@ -19,5 +19,6 @@ for i in range(2, num+1):
 
 print(sum(d[num]) % mod)
 
+
 # if j==0 if j== 9로 했었는데 멍청하게도
 # 밑의 elif 안해주면 if j ==0 해준게 없어지게 되버림...

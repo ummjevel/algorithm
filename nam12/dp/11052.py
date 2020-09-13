@@ -3,7 +3,7 @@ import sys
 n = int(sys.stdin.readline().rstrip())
 
 p = list(map(int, sys.stdin.readline().rstrip().split()))
-p.insert(0, 0)
+p.insert(0, 0)  # O(n)
 
 d = [0 for _ in range(n+10)]
 
