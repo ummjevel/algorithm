@@ -9,3 +9,6 @@ for i in range(len(string)):
 
 for i in range(26):
     print(stack[i], end=" ")
+
+# print* 활요해보기.
+# unpacking이 된다. 

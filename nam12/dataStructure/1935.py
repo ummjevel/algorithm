@@ -19,6 +19,7 @@ input.reverse()
 for i in range(len(string)):
 
     if string[i].isupper():
+        ord(string[i])
         stack.append((input.pop()))
 
     else:
@@ -26,9 +27,14 @@ for i in range(len(string)):
         second = stack.pop()
 
         if string[i] == '*':
-
+            stack.append(second * first)
         elif string[i] == '/':
-
+            stack.append(second / first)
         elif string[i] == '+':
-
+            stack.append(second + first)
         elif string[i] == '-':
+            stack.append(second - first)
+
+ans = stack.pop()
+round(ans, 2)
+print(ans)
