@@ -18,7 +18,7 @@ d[0] = a[0]
 for i in range(1, n):
     d[i] = a[i]
 
-    if d[i] < d[i-1] + a[i]:
+    if d[i] < (d[i-1] + a[i]):
         d[i] = d[i-1] + a[i]
 
 print(max(d))
