@@ -1,9 +1,9 @@
 import sys
 
-imput = sys.stdin.readline().rstrip()
+input = sys.stdin.readline().rstrip()
 N = int(input)
 
-stack = [0 for _ in range(4)]
+stack = [0 for _ in range(26)]
 ans = [0, 0, 0, 0]
 
 for i in range(N):
@@ -17,3 +17,4 @@ for i in range(N):
         ans[2] += 1
     else:
         ans[3] += 1
+print(stack)
