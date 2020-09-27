@@ -13,6 +13,5 @@ for i in range(n):
             d[i] += 1
             temp = a[j]
     d[i] += 1
-print(a)
-print(d)
+
 print(max(d))
