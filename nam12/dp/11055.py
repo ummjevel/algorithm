@@ -9,9 +9,11 @@ for i in range(n):
     d[i] += a[i]
     temp = 0
     for j in range(i):
-        if temp < a[j] and a[j] < a[i]:
+        if temp < a[j] < a[i]:
             d[i] += a[j]
             temp = a[j]
 
-
+print(d)
 print(max(d))
+
+# 답은 맞는데 틀린거 보니까 dp로 안풀어서 틀린 것 같음.

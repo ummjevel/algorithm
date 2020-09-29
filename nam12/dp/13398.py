@@ -33,8 +33,7 @@ for i in range(1, n):
 for i in range(n-2, -1, -1):
     decre[i] = max(decre[i+1]+a[i], a[i])
 
-d[1] = a[1]
-d[n-1] = a[n-1]
+d[0], d[n-1] = a[0], a[n-1]
 for i in range(1, n-1):
     d[i] = incre[i-1] + decre[i+1]
 
