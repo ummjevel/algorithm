@@ -7,9 +7,10 @@ while True:
         print(n)
         break
 
-    e = (e+1)
-    s = (s+1)
-    m = (m+1)
+    e += 1
+    s += 1
+    m += 1
+    n += 1
 
     if e > 15:
         e -= 15
@@ -17,4 +18,3 @@ while True:
         s -= 28
     if m > 19:
         m -= 19
-    n += 1
