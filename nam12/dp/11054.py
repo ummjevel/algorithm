@@ -14,6 +14,7 @@
 
 #         if a[i] < a[j] < max and decre[i] < decre[j]:
 #             decre[i] = decre[j]
+#             continue
 
 #         if a[i] > a[j] and incre[i] < incre[j]:
 #             incre[i] = incre[j]
@@ -30,6 +31,7 @@
 # print(incre, decre)
 # print(max(d))
 
+# ==================================
 import sys
 
 n = int(sys.stdin.readline().rstrip())
