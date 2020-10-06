@@ -6,9 +6,10 @@ d = [0]
 
 for i in range(n):
     a.append(int(sys.stdin.readline().rstrip()))
-d.append(a[1])
 
-if n > 1:  # 초항을 2까지 줘야 돼서 이렇게 했음. n = 1이면 a[2]가 없으니깐..
+d.append(a[1])
+# d.append(a[1]+a[2])
+if n >= 2:  # 초항을 2까지 줘야 돼서 이렇게 했음. n = 1이면 a[2]가 없으니깐..
     d.append(a[1] + a[2])
 
 for i in range(3, n+1):
