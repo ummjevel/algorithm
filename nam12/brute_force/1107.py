@@ -18,26 +18,23 @@ leng = len(goal)
 n = int(input())
 remove_list = list(map(int, input().split()))
 remocon_list = [i for i in range(10)]
-
 for i in range(n):
     remocon_list.remove(remove_list[i])
 
-print(remocon_list)
+cnt[0] = abs(int(goal) - cur)  # +, -로만 이동하기.
 
-# while True:  # 번호이동후 +,- 로 체크하기.
-#     if cur == goal:
-#         break
-
-min_value = 600000
+plag = 600000
 for c in permutations(remocon_list, leng):  # 순열함수 쓰면 tuple로 나오는데 변환시키는게 지랄같음.
-    if c[0] == (int(goal[0])-1) or c[0] == int(goal[0]) or c[0] == (int(goal[0])+1):
-        temp = "".join(map(str, c))
-        min_value = min(min_value, abs(int(goal) - int(temp)))
-cur = min_value
-print(cur)
+    temp = "".join(map(str, c))
 
-if cnt[0] > abs(goal - cur):
-    print(cnt[0])
+    if cnt[0] < int(temp):
+        continue
+
+    if abs(int(goal) - int(temp)) < plag:
+        plag = abs(int(goal) - int(temp))
+
+if cnt[0] < cnt[1]:
+    print(cnt[1])
     exit()
 else:
-    print(abs(goal - cur))
+    print(cnt[0])
