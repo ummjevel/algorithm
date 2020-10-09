@@ -17,25 +17,26 @@ leng = len(goal)
 goal = int(goal)
 
 n = int(input())
-remove_list = list(map(int, input().split()))
+if (n > 0):
+    remove_list = list(map(int, input().split()))
 remocon_list = [i for i in range(10)]
 for i in range(n):
-    remocon_list.remove(remove_list[i])
 
+    remocon_list.remove(remove_list[i])
 cnt[0] = abs(goal - cur)  # +, -로만 이동하기.
 
-plag = 600000
-for c in product(remocon_list, repeat=leng):  # 중복 순열 사용.
-    temp = "".join(map(str, c))
+flag = 600000
 
-    if cnt[0] < abs(goal - int(temp)):  # 번호 입력한게 더 멀때.
-        continue
+for i in range(1, leng+2):
+    for c in product(remocon_list, repeat=i):  # 중복 순열 사용.
 
-    if abs(goal - int(temp)) < plag:
-        plag = abs(goal - int(temp))
-        cur = temp
-
-cnt[1] = leng + abs(goal-int(cur))
+        temp = "".join(map(str, c))
+        res = abs(goal-int(temp))
+        if res < flag:
+            flag = res
+            cur = temp
+cur = int(cur)
+cnt[1] = len(str(cur)) + abs(goal-cur)
 
 if cnt[0] > cnt[1]:
     print(cnt[1])
