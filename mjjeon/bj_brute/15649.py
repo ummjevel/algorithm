@@ -21,6 +21,8 @@ arr = [i for i in range(1, N+1)]
 visited_arr = []
 dfs(0, N, M)
 
+# https://jaimemin.tistory.com/1237
+# 백트래킹: https://medium.com/@jeongdowon/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-backtracking-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-13492b18bfa1
 
 # 모르겠습니다.
 
