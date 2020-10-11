@@ -32,6 +32,9 @@ for i in range(1, leng+2):
 
         temp = "".join(map(str, c))
         res = abs(goal-int(temp))
+
+        if cnt[0] < res:
+            continue
         if res < flag:
             flag = res
             cur = temp
