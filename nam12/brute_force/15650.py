@@ -4,12 +4,15 @@ n, m = map(int, input().split())
 arr = []
 for i in range(1, n+1):
     arr.append(i)
-arr.append(100000)
 
 check = False
 for c in permutations(arr, m):
-    for i in c:
-        if int(i) < int(i+1):
+    check = False
+    for i in range(len(c)-1):
+        if int(c[i]) < int(c[i+1]):
             check = True
+        else:
+            check = False
+            break
     if(check):
         print(" ".join(map(str, c)))
