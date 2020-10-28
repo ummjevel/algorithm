@@ -22,3 +22,4 @@ for i in range(3, n+1):
             d[i][j] = a[i][j] + max(d[i-1][j-1], d[i-1][j])
 
 print(max(d[n]))
+#index 잘보기!

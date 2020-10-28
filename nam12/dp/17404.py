@@ -45,3 +45,5 @@ for i in range(3):
         ans.append(d[n][i])
 print(ans)
 print(min(ans))
+
+# 틀린 이유 :
