@@ -14,9 +14,15 @@ def dfs(cnt):
 
     for i in range(N):
 
+        if (check[i]):
+            continue
+
         ans.append(num[i])
         dfs(cnt+1)
+        check[i] = True
         ans.pop()
+        for j in range(i+1, N):
+            check[j] = False
 
 
 dfs(0)
