@@ -66,33 +66,59 @@
 #     print(num, end=' ')
 # print()
 
-def next_per(a):
-    length = len(a) - 1
+# def next_per(a):
+#     length = len(a) - 1
 
-    i = length
-    while i > 0 and a[i-1] >= a[i]:
-        i -= 1
-    if i <= 0:
-        return False
+#     i = length
+#     while i > 0 and a[i-1] >= a[i]:
+#         i -= 1
+#     if i <= 0:
+#         return False
 
-    j = length
-    while a[i-1] >= a[j]:
-        j -= 1
-    a[i-1], a[j] = a[j], a[i-1]
+#     j = length
+#     while a[i-1] >= a[j]:
+#         j -= 1
+#     a[i-1], a[j] = a[j], a[i-1]
 
-    j = length
-    while i < j:
-        a[i], a[j] = a[j], a[i]
-        i += 1
-        j -= 1
+#     j = length
+#     while i < j:
+#         a[i], a[j] = a[j], a[i]
+#         i += 1
+#         j -= 1
 
-    return True
+#     return True
 
+
+# n = int(input())
+# a = list(map(int, input().split()))
+
+# if next_per(a):
+#     print(*a)
+# else:
+#     print(-1)
+
+import sys
 
 n = int(input())
-a = list(map(int, input().split()))
+seq = [int(x) for x in sys.stdin.readline().split()]
 
-if next_per(a):
-    print(*a)
-else:
+k = -1
+
+for i in range(len(seq)-1):
+    if seq[i] < seq[i+1]:
+        k = i
+if k == -1:
     print(-1)
+else:
+    for j in range(k+1, len(seq)):
+        if seq[k] < seq[j]:
+            m = j
+    seq[k], seq[m] = seq[m], seq[k]
+
+    tmp = seq[k+1:]
+    tmp.sort()
+    answer = seq[:k+1] + tmp
+
+    for num in answer:
+        print(num, end=' ')
+    print()
